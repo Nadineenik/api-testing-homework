@@ -1,0 +1,45 @@
+I, [2026-10-20T18:00:33.600793 #13520]  INFO -- : Cleared interactions
+I, [2026-10-20T18:00:33.616529 #13520]  INFO -- : Registered expected interaction GET /users/123
+D, [2026-10-20T18:00:33.617034 #13520] DEBUG -- : {
+  "description": "a request for user 123",
+  "providerState": "user 123 exists",
+  "request": {
+    "method": "GET",
+    "path": "/users/123"
+  },
+  "response": {
+    "status": 200,
+    "headers": {},
+    "body": {
+      "id": 123,
+      "name": "Alice",
+      "email": "alice@example.com"
+    }
+  },
+  "metadata": null
+}
+I, [2026-10-20T18:00:33.631696 #13520]  INFO -- : Received request GET /users/123
+D, [2026-10-20T18:00:33.636341 #13520] DEBUG -- : {
+  "path": "/users/123",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:1234",
+    "User-Agent": "python-requests/2.34.2",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive"
+  }
+}
+I, [2026-10-20T18:00:33.636830 #13520]  INFO -- : Found matching response for GET /users/123
+D, [2026-10-20T18:00:33.637004 #13520] DEBUG -- : {
+  "status": 200,
+  "headers": {},
+  "body": {
+    "id": 123,
+    "name": "Alice",
+    "email": "alice@example.com"
+  }
+}
+I, [2026-10-20T18:00:33.646959 #13520]  INFO -- : Verifying - interactions matched
+I, [2026-10-20T18:00:33.661969 #13520]  INFO -- : Writing pact for UserService to ./pacts/userwebapp-userservice.json

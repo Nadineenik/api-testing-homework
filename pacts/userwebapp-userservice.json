@@ -1,0 +1,33 @@
+{
+  "consumer": {
+    "name": "UserWebApp"
+  },
+  "provider": {
+    "name": "UserService"
+  },
+  "interactions": [
+    {
+      "description": "a request for user 123",
+      "providerState": "user 123 exists",
+      "request": {
+        "method": "GET",
+        "path": "/users/123"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "id": 123,
+          "name": "Alice",
+          "email": "alice@example.com"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
