@@ -1,5 +1,5 @@
 import pytest
-from pact import Consumer, Provider
+from pact.v2 import Consumer, Provider
 from client import UserClient
 
 @pytest.fixture

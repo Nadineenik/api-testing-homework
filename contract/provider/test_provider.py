@@ -1,8 +1,13 @@
-import pytest
 from pact import Verifier
-from main import app  # если используем ASGI, можно через uvicorn
+import pytest
 
 def test_provider_against_contract():
-    verifier = Verifier(provider="UserService", provider_base_url="http://localhost:8000")
-    success, logs = verifier.verify_pacts("./pacts/userwebapp-userservice.json")
-    assert success == 0, logs
+    # В v3 Verifier принимает имя провайдера и использует цепочку методов
+    verifier = (
+        Verifier("UserService")  # Имя провайдера, как в контракте
+        .add_source("./pacts/")  # Папка с файлами контрактов
+        .add_transport(url="http://localhost:8000")  # URL вашего запущенного сервиса
+    )
+    
+    # Метод verify() выбросит исключение, если проверка не пройдёт
+    verifier.verify()
