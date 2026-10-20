@@ -1,0 +1,8 @@
+pytest
+requests
+faker
+swaggerforge
+pact-python
+fastapi
+uvicorn
+python-multipart
