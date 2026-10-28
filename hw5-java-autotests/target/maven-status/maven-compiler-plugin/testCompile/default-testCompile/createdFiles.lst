@@ -1,0 +1,4 @@
+pages\InventoryPage.class
+tests\UiTests$LoginTests.class
+tests\UiTests.class
+pages\LoginPage.class
