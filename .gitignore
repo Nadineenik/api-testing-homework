@@ -1,0 +1,10 @@
+# Java Maven
+hw5-java-autotests/target/
+*.class
+
+# ChromeDriver
+hw5-java-autotests/chromedriver.exe
+
+# Python
+__pycache__/
+.pytest_cache/
