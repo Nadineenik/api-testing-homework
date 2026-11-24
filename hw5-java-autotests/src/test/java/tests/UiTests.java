@@ -11,7 +11,6 @@ import pages.LoginPage;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
 
 @DisplayName("Тестирование SauceDemo с паттернами")
 public class UiTests {
@@ -66,5 +65,17 @@ public class UiTests {
                 .load()
                 .login(user)
                 .isLoaded();
+    }
+
+
+    @Test
+    @Tag("regression")
+    @DisplayName("Заблокированный пользователь видит сообщение об ошибке")
+    void lockedOutUserTest() {
+        new LoginPage()
+                .load()
+                .isLoaded()
+                .loginExpectingError(UserFactory.lockedOutUser())
+                .checkError("Epic sadface: Sorry, this user has been locked out.");
     }
 }

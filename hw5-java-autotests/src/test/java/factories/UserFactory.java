@@ -10,4 +10,8 @@ public class UserFactory {
     public static User lockedOutUser() {
         return new User("locked_out_user", "secret_sauce");
     }
+
+    public static User problemUser() {
+        return new User("problem_user", "secret_sauce");
+    }
 }
